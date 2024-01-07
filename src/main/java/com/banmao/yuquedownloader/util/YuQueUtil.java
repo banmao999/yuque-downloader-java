@@ -83,6 +83,9 @@ public class YuQueUtil {
     @Getter
     private static final ThreadLocal<CountDownLatch> COUNT_DOWN_LATCH_THREAD_LOCAL = new InheritableThreadLocal<>();
 
+    @Getter
+    private static final ThreadLocal<Integer> TOTAL_DOC_COUNT = new InheritableThreadLocal<>();
+
     public static CountDownLatch getCountDownLatch() {
         return COUNT_DOWN_LATCH_THREAD_LOCAL.get();
     }

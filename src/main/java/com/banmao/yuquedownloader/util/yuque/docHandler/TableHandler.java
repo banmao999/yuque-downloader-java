@@ -19,4 +19,8 @@ public class TableHandler extends DocHandler{
         handlerParam.setInitTable(true);
     }
 
+    @Override
+    public void postHandleDocToMd(StringBuilder mdContent, Element element) {
+        mdContent.append("\n");
+    }
 }

@@ -22,7 +22,7 @@ public class LiHandler extends DocHandler {
         if (listType != null && listType.equals(HandlerParam.ListType.OL)) {
             // <ol> 是数字列表
             int olIdx = handlerParam.getOlIdx();
-            mdContent.append(olIdx).append(" ");
+            mdContent.append(olIdx).append(". ");
             handlerParam.setOlIdx(olIdx + 1);
         } else {
             mdContent.append("- ");

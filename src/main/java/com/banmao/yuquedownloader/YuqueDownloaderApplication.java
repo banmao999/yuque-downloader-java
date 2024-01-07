@@ -45,12 +45,15 @@ public class YuqueDownloaderApplication implements CommandLineRunner {
             String bookName = data.getBook().getName();
 
             FileUtil.clean(bookName);
+            FileUtil.clean(bookName + ".assets");
+            FileUtil.del(bookName + ".md");
 
             String filePath = bookName + File.separator + data.getBook().getId() + "-appdata.json";
             File file = FileUtil.writeString(JSON.toJSONString(data), filePath, StandardCharsets.UTF_8);
             log.debug("appdata持久化: {}", file.getAbsolutePath());
 
             List<AppData.Book.Toc> tocList = data.getBook().getToc();
+            YuQueUtil.getTOTAL_DOC_COUNT().set(tocList.size());
             YuQueUtil.getCOUNT_DOWN_LATCH_THREAD_LOCAL().set(new CountDownLatch(tocList.size()));
 
             int index = 0;

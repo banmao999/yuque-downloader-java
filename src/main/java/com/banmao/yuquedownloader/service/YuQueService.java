@@ -98,6 +98,7 @@ public class YuQueService {
             log.error("处理 {} 文档报错,msg:{},error:", JSON.toJSONString(toc), e.getMessage(), e);
         } finally {
             YuQueUtil.getCountDownLatch().countDown();
+            log.info("文档处理进度: {}/{}", YuQueUtil.getCountDownLatch().getCount(), YuQueUtil.getTOTAL_DOC_COUNT().get());
             log.debug("countDownLatch: {}", YuQueUtil.getCountDownLatch().getCount());
         }
 

@@ -24,5 +24,6 @@ public class TdHandler extends DocHandler {
     @Override
     public void postHandleDocToMd(StringBuilder mdContent, Element element) {
 //        mdContent.append("|");
+        handlerParam.setPInTd(false);
     }
 }
