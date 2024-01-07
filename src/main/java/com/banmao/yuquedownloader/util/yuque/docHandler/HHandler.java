@@ -19,7 +19,7 @@ public class HHandler extends DocHandler {
     public void handleDocToMd(StringBuilder mdContent, Element element) {
         Integer headLevel = handlerParam.getHeadLevel();
         String hLevel = element.nodeName().replace("h", "");
-        headLevel = Integer.parseInt(hLevel) + headLevel;
+        headLevel = Integer.parseInt(hLevel) - 1 + headLevel;
 
         String wellSigns = YuQueUtil.genWellSigns(headLevel);
 

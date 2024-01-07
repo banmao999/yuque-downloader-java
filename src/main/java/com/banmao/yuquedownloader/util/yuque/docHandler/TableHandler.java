@@ -15,7 +15,8 @@ public class TableHandler extends DocHandler{
 
     @Override
     public void handleDocToMd(StringBuilder mdContent, Element element) {
-        mdContent.append(element.html());
+//        mdContent.append(element.html());
+        handlerParam.setInitTable(true);
     }
 
 }

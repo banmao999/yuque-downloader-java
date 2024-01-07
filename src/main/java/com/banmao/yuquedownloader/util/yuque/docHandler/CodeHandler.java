@@ -24,6 +24,6 @@ public class CodeHandler extends DocHandler {
 
     @Override
     public void postHandleDocToMd(StringBuilder mdContent, Element element) {
-        mdContent.append("`").append("\n\n");
+        mdContent.append("`");
     }
 }

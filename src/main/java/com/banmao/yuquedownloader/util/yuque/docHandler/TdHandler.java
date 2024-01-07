@@ -1,35 +1,28 @@
 package com.banmao.yuquedownloader.util.yuque.docHandler;
 
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Element;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class PBrHandler extends DocHandler{
+public class TdHandler extends DocHandler {
 
     {
-        eleTagNames = new String[] {"p", "br"};
+        eleTagNames = new String[] {"td"};
     }
 
     @Override
     public void handleDocToMd(StringBuilder mdContent, Element element) {
-//        mdContent.append(element.html());
+        handlerParam.setPInTd(true);
+        mdContent.append("|");
     }
 
     @Override
     public void postHandleDocToMd(StringBuilder mdContent, Element element) {
-        if (handlerParam.getPInTd()) {
-            if ("br".equalsIgnoreCase(element.nodeName())) {
-                mdContent.append("<br/>");
-            }
-            return;
-        }
-        mdContent.append("\n");
-        if ("p".equalsIgnoreCase(element.nodeName())) {
-            mdContent.append("\n");
-        }
+//        mdContent.append("|");
     }
-
 }

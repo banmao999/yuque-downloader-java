@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class IgnoreHandler extends DocHandler {
 
     {
-        eleTagNames = new String[] {"colgroup"};
+        eleTagNames = new String[] {"colgroup", "col", "tbody", "a"};
     }
 
     @Override

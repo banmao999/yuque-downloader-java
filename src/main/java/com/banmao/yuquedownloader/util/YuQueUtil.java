@@ -1,7 +1,6 @@
 package com.banmao.yuquedownloader.util;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.resource.ResourceUtil;
 import com.banmao.yuquedownloader.entity.AppData;
 import com.banmao.yuquedownloader.entity.HandlerParam;
 import com.banmao.yuquedownloader.util.yuque.docHandler.DocHandler;
@@ -20,8 +19,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 @Slf4j
@@ -178,7 +178,17 @@ public class YuQueUtil {
     }
 
     public static void mergeMd2Book(String bookName) {
-        URL resource = ResourceUtil.getResource(bookName);
+        String baseDir = bookName + File.separator + "md";
+        boolean directory = FileUtil.isDirectory(baseDir);
+        if (directory) {
+            List<String> fileNames = FileUtil.listFileNames(baseDir);
+            StringBuilder finalMdContent = new StringBuilder();
+            fileNames.stream().sorted().forEach(fileName -> {
+                String content = FileUtil.readString(baseDir + File.separator + fileName, StandardCharsets.UTF_8);
+                finalMdContent.append(content);
+            });
+            FileUtil.writeString(finalMdContent.toString(), bookName + ".md", StandardCharsets.UTF_8);
+        }
     }
 
 }

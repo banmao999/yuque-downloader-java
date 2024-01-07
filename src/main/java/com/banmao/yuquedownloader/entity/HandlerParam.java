@@ -17,9 +17,16 @@ public class HandlerParam {
 
     private ListType listType;
 
+    @Builder.Default
     private int olIdx = 0;
 
+    @Builder.Default
     private int imageIdx = 1;
+
+    @Builder.Default
+    private Boolean initTable = false;
+    @Builder.Default
+    private Boolean pInTd = false;
 
     // 图片下载同步计算器
     private CountDownLatch imageCountDownLatch;

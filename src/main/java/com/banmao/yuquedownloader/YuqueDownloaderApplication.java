@@ -32,6 +32,9 @@ public class YuqueDownloaderApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+//        YuQueUtil.mergeMd2Book("Spring源码解析");
+//
+//
 //        if (true) {
 //            return;
 //        }
