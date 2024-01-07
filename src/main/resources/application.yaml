@@ -1,0 +1,10 @@
+yuque:
+#  cookie: "lang=zh-cn; _yuque_session=c9v9yCC75zwaj_XhOKBEs65nAe2ZSpaNzmFaUvW58noe1hI2c1bTVbicsaQLsdABc_B_35zDWm1AEb-2uDMPGg==; _uab_collina=170047244754579041226168; acw_tc=0bca30fe17045108943855963effada0975386517ba066786ccdb15ae3e2d2; yuque_ctoken=702KwxJKEmyG0CgD9R5_2rz9; current_theme=default"
+  yuque_session: "c9v9yCC75zwaj_XhOKBEs65nAe2ZSpaNzmFaUvW58noe1hI2c1bTVbicsaQLsdABc_B_35zDWm1AEb-2uDMPGg=="
+  yuque_ctoken: "zTixH_NWsrrY8vWUTTm-jIO7"
+  acw_tc: "0bca30fe17045108943855963effada0975386517ba066786ccdb15ae3e2d2"
+  yuque_host: "https://www.yuque.com"
+
+logging:
+  level:
+    com.banmao: info
